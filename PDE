@@ -6,3 +6,4 @@ Multistep Neural Networks for Data-driven Discovery of Nonlinear Dynamical Syste
 Deep Learning Approximation for Stochastic Control Problems
 Solving High-Dimensional Partial Differential Equations Using Deep Learning
 DR-RNN: A deep residual recurrent neural network for model reduction
+Stochastic spectral methods for efficient Bayesian solution of inverse problems
