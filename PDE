@@ -1,9 +1,9 @@
 Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations
 Physics Informed Deep Learning (Part II): Data-driven Discovery of Nonlinear Partial Differential Equations
+Physics-informed neural networks: A deep learningframework for solving forward and inverse problems involving nonlinear partial differential equations
 Deep Hidden Physics Models: Deep Learning of Nonlinear Partial Differential Equations
 Forward-Backward Stochastic Neural Networks: Deep Learning of High-dimensional Partial Differential Equations
 Multistep Neural Networks for Data-driven Discovery of Nonlinear Dynamical Systems
 Deep Learning Approximation for Stochastic Control Problems
 Solving High-Dimensional Partial Differential Equations Using Deep Learning
 DR-RNN: A deep residual recurrent neural network for model reduction
-Stochastic spectral methods for efficient Bayesian solution of inverse problems
