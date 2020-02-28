@@ -1,0 +1,143 @@
+\documentclass[13pt]{article}
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\newcommand{\bm}{\textbf}
+\begin{document}
+
+\title{Embedded Manifold and Classical Mechanics}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Embedded Manifolds and Classical Mechanics}\\
+{\large Junpeng Gao}\\
+junpenggaox@gmail.com
+\end{center}
+\section{Definition of Manifolds}
+\subsection{Linear Algebra}
+
+The cross product, viewed as an operator on $\mathbb{R}^{3},$ can also be written in terms of a linear transformation and a matrix multiplication as
+$$
+x \times y=S(x) y
+$$
+
+$\text { where } S: \mathbb{R}^{3} \rightarrow \mathbb{R}^{3 \times 3} \text { is }$
+
+\begin{equation}
+S(x)=\left[\begin{array}{ccc}
+0 & -x_{3} & x_{2} \\
+x_{3} & 0 & -x_{1} \\
+-x_{2} & x_{1} & 0
+\end{array}\right]
+\end{equation}
+Note that $\operatorname{det}(S(x))=0,$ for all $x \in \mathbb{R}^{3}$.
+
+For each orthogonal matrix $R \in \mathrm{SO}(3),$ there is a skew-symmetric matrix $\xi \in \mathfrak{s o}(3)$ such that $I_{3 \times 3}+\xi$ is nonsingular and the orthogonal matrix can be expressed as:
+\begin{equation}
+R=\left(I_{3 \times 3}-\xi\right)\left(I_{3 \times 3}+\xi\right)^{-1}
+\end{equation}
+This relationship is often referred to as the Cayley transformation.
+
+The following is also true. For each orthogonal matrix $R \in \mathrm{SO}(3),$ there is a skew-symmetric matrix $\xi \in \mathfrak{s o}(3)$ such that the orthogonal matrix can be expressed as:
+\begin{equation}
+R=e^{\xi}=\sum_{n=0}^{\infty} \frac{(\xi)^{n}}{n !}
+\end{equation}
+\begin{equation}
+\left(\frac{\partial f(A)}{\partial A} \cdot B\right)=\operatorname{trace}\left(\left(\frac{\partial f(A)}{\partial A}\right)^{T} B\right) \in \mathbb{R}^{1}
+\end{equation}
+
+\subsection{Manifolds}
+\bm{Several important concepts and definitions:}\\
+
+A point in a differentiable manifold $\mathcal{M}$ is most often described in terms of
+local coordinates, called charts, and a collection of charts, called an atlas.
+Each vector in $\mathcal{M}$ is specified by real-valued coordinates.
+
+\bm{Manifold:}
+
+A differentiable manifold, as a submersion or embedded manifold in $\mathbb{R}^n$,
+is described by
+\begin{equation}
+M=\left\{x \in \mathbb{R}^{n}: f_{i}(x)=0, i=1, \dots, l\right\}
+\end{equation}
+where $f_{i}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{1}, i=1, \ldots, l$ are scalar differentiable functions with the property that the vectors $\frac{\partial f_{i}(x)}{\partial x}, i=1, \ldots, l$ are linearly independent vectors in $\mathbb{R}^{n}$ for each $x \in M .$ Thus, necessarily $1 \leq l \leq n .$ We say that the manifold
+M has dimension $n − l$ and codimension $l$. Consequently, we can represent a vector in an embedded manifold $M \subset \mathbb{R}^{n}$ as a vector in $\mathbb{R}^{n}$ so long as the equality conditions defining the embedded manifold are satisfied.
+
+\bm{Tangent Space:}
+
+Let $\gamma:[-1,1] \rightarrow M$ denote a differentiable curve on $M$ with $\gamma(0)=x \in M$ Then $\frac{d \gamma(s)}{d s},$ evaluated at $s=0,$ is a tangent vector to $M$ at $x \in M .$ For each $x \in M,$ the set of all such tangent vectors to $M$ at $x \in M,$ denoted by $\mathrm{T}_{x} M$ is a subspace of $\mathbb{R}^{n},$ referred to as the tangent space of $M$ at $x \in M,$ and hence it is a linear manifold. We refer to $\xi \in \mathrm{T}_{x} M$ as a tangent to $M$ at $x \in M .$ For a manifold $M$ as given above, it can be shown that the tangent space.
+\begin{equation}
+\mathrm{T}_{x} M=\left\{\xi \in \mathbb{R}^{n}:\left(\frac{\partial f_{i}(x)}{\partial x} \cdot \xi\right)=0, i=1, \ldots, m\right\}
+\end{equation}
+so that the tangent space consists of the set of vectors in $\mathbb{R}^{n}$ that are orthogonal to all of the gradients of the functions that define the manifold. The dimension of the tangent space is $n-m$.
+
+\bm{Tangent bundles}:
+
+The tangent bundle of a manifold $M,$ denoted by $\mathrm{T} M,$ is the set of pairs $(x, \xi) \in M \times \mathrm{T}_{x} M,$ and it has its own manifold structure. The dimension of the tangent bundle is $2(n-m)$.
+
+\bm{Cotangent Vector space and bundles:}
+
+The set of all such cotangents, denoted $\mathrm{T}_{x}^{*} M,$ is the set of all Binear functionals on the tangent space at $x \in M,$ namely
+\begin{equation}
+\mathrm{T}_{x}^{*} M=\left(\mathrm{T}_{x} M\right)^{*}
+\end{equation}
+and it is a subspace, referred to as the cotangent space of $M$ at $x \in M,$ and hence it is a linear manifold. The dimension of the cotangent space is $n-m$.
+
+The cotangent bundle of a manifold $M,$ denoted by $T^{*} M,$ is the set of pairs $(x, \zeta) \in M \times \mathrm{T}_{x}^{*} M,$ and it has its own manifold structure. The dimension of the cotangent bundle is $2(n-m)$.
+\subsection{Vector Fields on a Manifold}
+\bm{Vector Fields:}
+
+Let $M$ be a differentiable manifold embedded in $\mathbb{R}^{n} .$ A vector field on $M$ is defined by a mapping from $M$ to $\mathbb{R}^{n}$ with the property that for each $x \in M$ there is a unique $y \in \mathrm{T}_{x} M$ and this correspondence $x \rightarrow y$ is continuous. The interpretation is that a vector field associates with each point $x \in M$ in the manifold a unique tangent vector $y \in \mathrm{T}_{x} M$ in the tangent space of the manifold.
+
+\bm{Differential Equations:}
+
+Let $f: M \times \mathbb{R}^{1} \rightarrow \mathbb{R}^{n}$ be a differentiable time-dependent vector-valued function that satisfies $f(x, t) \in \mathrm{T}_{x} M$ for each $x \in M$ and $t \in \mathbb{R}^{1} .$ If the vector field $f(x, t)$ is time-independent, then it is said to be autonomous, otherwise it is nonautonomous. The differential equation
+\begin{equation}
+\dot{x}(t)=f(x(t), t)
+\end{equation}
+on the manifold $M$ is well-posed in the sense that for each initial condition in the manifold $M,$ the initial-value problem has a unique solution. Suppose 
+a solution at time instant $t,$ corresponding to an initial-value $x_{0} \in M$ at time instant $t_{0},$ is given by $x\left(t, t_{0}, x_{0}\right) \in M .$ Then $x\left(t, t_{0}, x_{0}\right)=F_{t, t_{0}}\left(x_{0}\right) \in M$
+denotes the one-parameter time evolution or motion on $M .$ The operator $F_{t, t_{0}}: M \rightarrow M$ defines the flow map.  
+
+If $\phi: M \rightarrow \mathbb{R}^{1}$ is differentiable, then we can comp time derivative
+\begin{equation}
+\dot{\phi}(x)=\frac{\partial \phi(x)}{\partial x} \cdot f(x)
+\end{equation}
+
+\begin{shaded}
+
+\end{shaded}
+
+
+\end{document}
